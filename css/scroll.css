@@ -1,0 +1,14 @@
+.material-layout.mdl-js-layout.has-drawer.is-upgraded {
+    display: block;
+    overflow-y: auto;
+    
+  }
+  .material-layout.mdl-js-layout.has-drawer.is-upgraded::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #aaa; /* or add it to the track */
+  }
+    /* Add a thumb */
+  .material-layout.mdl-js-layout.has-drawer.is-upgraded::-webkit-scrollbar-thumb {
+    background: #0097A7; 
+  }
