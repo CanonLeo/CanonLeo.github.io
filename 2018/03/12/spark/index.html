@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Spark 编程指南 | 
+        
+        Canon&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Canon&#39;s Blog">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/03/12/spark/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Canon&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/03/12/spark/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Spark 编程指南 | Canon&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Mon Mar 12 2018 09:59:43 GMT+0800">
+        <meta property="article:modified_time" content="Wed Mar 14 2018 15:51:33 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/03/12/spark/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/03/12/spark/index.html",
+    "headline": "Spark 编程指南",
+    "datePublished": "Mon Mar 12 2018 09:59:43 GMT+0800",
+    "dateModified": "Wed Mar 14 2018 15:51:33 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Canon Leo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Canon&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+    <!-- Scroll -->
+    <link rel="stylesheet" href="/css/scroll.css">
+
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spark依赖"><span class="post-toc-number">2.</span> <span class="post-toc-text">Spark依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#初始化Spark"><span class="post-toc-number">3.</span> <span class="post-toc-text">初始化Spark</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用Shell"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">使用Shell</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#弹性分布式数据集-RDDs"><span class="post-toc-number">4.</span> <span class="post-toc-text">弹性分布式数据集 (RDDs)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#并行集合"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">并行集合</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#外部-Datasets（数据集）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">外部 Datasets（数据集）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RDD-操作"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">RDD 操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">基础</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#传递-Functions（函数）给-Spark"><span class="post-toc-number">4.3.2.</span> <span class="post-toc-text">传递 Functions（函数）给 Spark</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#理解闭包"><span class="post-toc-number">4.3.3.</span> <span class="post-toc-text">理解闭包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#示例"><span class="post-toc-number">4.3.3.1.</span> <span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Local（本地）vs-cluster（集群）模式"><span class="post-toc-number">4.3.3.2.</span> <span class="post-toc-text">Local（本地）vs. cluster（集群）模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#打印-RDD-的-elements"><span class="post-toc-number">4.3.3.3.</span> <span class="post-toc-text">打印 RDD 的 elements</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#与-Key-Value-Pairs-一起使用"><span class="post-toc-number">4.3.4.</span> <span class="post-toc-text">与 Key-Value Pairs 一起使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Transformations（转换）"><span class="post-toc-number">4.3.5.</span> <span class="post-toc-text">Transformations（转换）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Actions（动作）"><span class="post-toc-number">4.3.6.</span> <span class="post-toc-text">Actions（动作）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Shuffle-操作"><span class="post-toc-number">4.3.7.</span> <span class="post-toc-text">Shuffle 操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Background（幕后）"><span class="post-toc-number">4.3.7.1.</span> <span class="post-toc-text">Background（幕后）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#性能影响"><span class="post-toc-number">4.3.7.2.</span> <span class="post-toc-text">性能影响</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RDD-Persistence（持久化）"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">RDD Persistence（持久化）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何选择存储级别"><span class="post-toc-number">4.4.1.</span> <span class="post-toc-text">如何选择存储级别 ?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除数据"><span class="post-toc-number">4.4.2.</span> <span class="post-toc-text">删除数据</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#共享变量"><span class="post-toc-number">5.</span> <span class="post-toc-text">共享变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#广播变量"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">广播变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Accumulators（累加器）"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Accumulators（累加器）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署应用到集群中"><span class="post-toc-number">6.</span> <span class="post-toc-text">部署应用到集群中</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从-Java-Scala-启动-Spark-jobs"><span class="post-toc-number">7.</span> <span class="post-toc-text">从 Java / Scala 启动 Spark jobs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单元测试"><span class="post-toc-number">8.</span> <span class="post-toc-text">单元测试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速链接"><span class="post-toc-number">9.</span> <span class="post-toc-text">快速链接</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Spark 编程指南
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Canon Leo</strong>
+        <span>3月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spark 编程指南&url=http://yoursite.com/2018/03/12/spark/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spark 编程指南&url=http://yoursite.com/2018/03/12/spark/index.html&via=Canon Leo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/03/12/spark/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/03/12/spark/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在一个较高的概念上来说，每一个 Spark 应用程序由一个在集群上运行着用户的 main 函数和执行各种并行操作的 driver program（驱动程序）组成。Spark 提供的主要抽象是一个弹性分布式数据集（RDD），它是可以执行并行操作且跨集群节点的元素的集合。RDD 可以从一个 Hadoop 文件系统（或者任何其它 Hadoop 支持的文件系统），或者一个在 driver program（驱动程序）中已存在的 Scala 集合，以及通过 transforming（转换）来创建一个 RDD。用户为了让它在整个并行操作中更高效的重用，也许会让 Spark persist（持久化）一个 RDD 到内存中。最后，RDD 会自动的从节点故障中恢复。</p>
+<p>在 Spark 中的第二个抽象是能够用于并行操作的 shared variables（共享变量），默认情况下，当 Spark 的一个函数作为一组不同节点上的任务运行时，它将每一个变量的副本应用到每一个任务的函数中去。有时候，一个变量需要在整个任务中，或者在任务和 driver program（驱动程序）之间来共享。Spark 支持两种类型的共享变量 : broadcast variables（广播变量），它可以用于在所有节点上缓存一个值，和 accumulators（累加器），他是一个只能被 “added（增加）” 的变量，例如 counters 和 sums。</p>
+<h2 id="Spark依赖"><a href="#Spark依赖" class="headerlink" title="Spark依赖"></a>Spark依赖</h2><p>要编写一个 Spark 的应用程序，您需要在 Spark 上添加一个 Maven 依赖。Spark 可以通过 Maven 中央仓库获取:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupId = org.apache.spark</span><br><span class="line">artifactId = spark-core_2.11</span><br><span class="line">version = 2.2.0</span><br></pre></td></tr></table></figure></p>
+<p>此外，如果您想访问一个 HDFS 集群，则需要针对您的 HDFS 版本添加一个 hadoop-client（hadoop 客户端）依赖。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupId = org.apache.hadoop</span><br><span class="line">artifactId = hadoop-client</span><br><span class="line">version = &lt;your-hdfs-version&gt;</span><br></pre></td></tr></table></figure></p>
+<p>最后，您需要导入一些 Spark classes（类）到您的程序中去。添加下面几行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.spark.SparkContext</span><br><span class="line">import org.apache.spark.SparkConf</span><br></pre></td></tr></table></figure></p>
+<h2 id="初始化Spark"><a href="#初始化Spark" class="headerlink" title="初始化Spark"></a>初始化Spark</h2><p>Spark 程序必须做的第一件事情是创建一个 SparkContext 对象，它会告诉 Spark 如何访问集群。要创建一个 SparkContext，首先需要构建一个包含应用程序的信息的 SparkConf 对象。</p>
+<p>每一个 JVM 可能只能激活一个 SparkContext 对象。在创新一个新的对象之前，必须调用 stop() 该方法停止活跃的 SparkContext。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val conf = new SparkConf().setAppName(appName).setMaster(master)</span><br><span class="line">new SparkContext(conf)</span><br></pre></td></tr></table></figure></p>
+<p>这个 appName 参数是一个在集群 UI 上展示应用程序的名称。 master 是一个 Spark, Mesos 或 YARN 的 cluster URL，或者指定为在 local mode（本地模式）中运行的 “local” 字符串。在实际工作中，当在集群上运行时，您不希望在程序中将 master 给硬编码，而是用 使用 spark-submit 启动应用 并且接收它。然而，对于本地测试和单元测试，您可以通过 “local” 来运行 Spark 进程。</p>
+<h3 id="使用Shell"><a href="#使用Shell" class="headerlink" title="使用Shell"></a>使用Shell</h3><p>在 Spark Shell 中，一个特殊的 interpreter-aware（可用的解析器）SparkContext 已经为您创建好了，称之为 sc 的变量。创建您自己的 SparkContext 将不起作用。您可以使用 –master 参数设置这个 SparkContext 连接到哪一个 master 上，并且您可以通过 –jars 参数传递一个逗号分隔的列表来添加 JARs 到 classpath 中。也可以通过 –packages 参数应用一个用逗号分隔的 maven coordinates（maven 坐标）方式来添加依赖（例如，Spark 包）到您的 shell session 中去。任何额外存在且依赖的仓库（例如 Sonatype）可以传递到 –repositories 参数。例如，要明确使用四个核（CPU）来运行 bin/spark-shell，使用:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./bin/spark-shell --master <span class="built_in">local</span>[4]</span><br></pre></td></tr></table></figure></p>
+<p>或者, 也可以添加 code.jar 到它的 classpath 中去, 使用:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./bin/spark-shell --master <span class="built_in">local</span>[4] --jars code.jar</span><br></pre></td></tr></table></figure></p>
+<p>为了包含一个依赖，使用 Maven 坐标:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./bin/spark-shell --master <span class="built_in">local</span>[4] --packages <span class="string">"org.example:example:0.1"</span></span><br></pre></td></tr></table></figure></p>
+<p>有关选项的完整列表, 请运行 spark-shell –help. 在幕后, spark-shell 调用了常用的 spark-submit 脚本。</p>
+<h2 id="弹性分布式数据集-RDDs"><a href="#弹性分布式数据集-RDDs" class="headerlink" title="弹性分布式数据集 (RDDs)"></a>弹性分布式数据集 (RDDs)</h2><p>Spark 主要以一个 弹性分布式数据集（RDD）的概念为中心，它是一个容错且可以执行并行操作的元素的集合。有两种方法可以创建 RDD : 在你的 driver program（驱动程序）中 parallelizing 一个已存在的集合，或者在外部存储系统中引用一个数据集，例如，一个共享文件系统，HDFS，HBase，或者提供 Hadoop InputFormat 的任何数据源。</p>
+<h3 id="并行集合"><a href="#并行集合" class="headerlink" title="并行集合"></a>并行集合</h3><p>可以在您的 driver program (a Scala Seq) 中已存在的集合上通过调用 SparkContext 的 parallelize 方法来创建并行集合。该集合的元素从一个可以并行操作的 distributed dataset（分布式数据集）中复制到另一个 dataset（数据集）中去。例如，这里是一个如何去创建一个保存数字 1 ~ 5 的并行集合。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val data = Array(1, 2, 3, 4, 5)</span><br><span class="line">val distData = sc.parallelize(data)</span><br></pre></td></tr></table></figure></p>
+<p>在创建后，该 distributed dataset（分布式数据集）（distData）可以并行的执行操作。例如，我们可以调用 distData.reduce((a, b) =&gt; a + b) 来合计数组中的元素。后面我们将介绍 distributed dataset（分布式数据集）上的操作。</p>
+<p>并行集合中一个很重要参数是 partitions（分区）的数量，它可用来切割 dataset（数据集）。Spark 将在集群中的每一个分区上运行一个任务。通常您希望群集中的每一个 CPU 计算 2-4 个分区。一般情况下，Spark 会尝试根据您的群集情况来自动的设置的分区的数量。当然，您也可以将分区数作为第二个参数传递到 parallelize (e.g. sc.parallelize(data, 10)) 方法中来手动的设置它。注意: 代码中的一些地方会使用 term slices (a synonym for partitions) 以保持向后兼容。</p>
+<h3 id="外部-Datasets（数据集）"><a href="#外部-Datasets（数据集）" class="headerlink" title="外部 Datasets（数据集）"></a>外部 Datasets（数据集）</h3><p>Spark 可以从 Hadoop 所支持的任何存储源中创建 distributed dataset（分布式数据集），包括本地文件系统，HDFS，Cassandra，HBase，Amazon S3 等等。 Spark 支持文本文件，SequenceFiles，以及任何其它的 Hadoop InputFormat。<br>可以使用 SparkContext 的 textFile 方法来创建文本文件的 RDD。此方法需要一个文件的 URI（计算机上的本地路径 ，hdfs://，s3n:// 等等的 URI），并且读取它们作为一个 lines（行）的集合。下面是一个调用示例:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; val distFile = sc.textFile(<span class="string">"data.txt"</span>)</span><br><span class="line">distFile: org.apache.spark.rdd.RDD[String] = data.txt MapPartitionsRDD[10] at textFile at &lt;console&gt;:26</span><br></pre></td></tr></table></figure></p>
+<p>在创建后，distFile 可以使用 dataset（数据集）的操作。例如，我们可以使用下面的 map 和 reduce 操作来合计所有行的数量: distFile.map(s =&gt; s.length).reduce((a, b) =&gt; a + b)。</p>
+<p>使用 Spark 读取文件时需要注意:</p>
+<p>如果使用本地文件系统的路径，所工作节点的相同访问路径下该文件必须可以访问。复制文件到所有工作节点上，或着使用共享的网络挂载文件系统。</p>
+<p>所有 Spark 基于文件的 input 方法, 包括 textFile, 支持在目录上运行, 压缩文件, 和通配符. 例如, 您可以使用 textFile(“/my/directory”), textFile(“/my/directory/<em>.txt”), and textFile(“/my/directory/</em>.gz”).</p>
+<p>textFile 方法也可以通过第二个可选的参数来控制该文件的分区数量. 默认情况下, Spark 为文件的每一个 block（块）创建的一 个 partition 分区（HDFS 中块大小默认是 128MB），当然你也可以通过传递一个较大的值来要求一个较高的分区数量。请注意，分区的数量不能够小于块的数量。</p>
+<p>除了文本文件之外，Spark 的 Scala API 也支持一些其它的数据格式:</p>
+<p>SparkContext.wholeTextFiles 可以读取包含多个小文本文件的目录, 并且将它们作为一个 (filename, content) pairs 来返回. 这与 textFile 相比, 它的每一个文件中的每一行将返回一个记录. 分区由数据量来确定, 某些情况下, 可能导致分区太少. 针对这些情况, wholeTextFiles 在第二个位置提供了一个可选的参数用户控制分区的最小数量.</p>
+<p>针对 SequenceFiles, 使用 SparkContext 的 sequenceFile[K, V] 方法，其中 K 和 V 指的是文件中 key 和 values 的类型. 这些应该是 Hadoop 的 Writable 接口的子类, 像 IntWritable and Text. 此外, Spark 可以让您为一些常见的 Writables 指定原生类型; 例如, sequenceFile[Int, String] 会自动读取 IntWritables 和 Texts.</p>
+<p>针对其它的 Hadoop InputFormats, 您可以使用 SparkContext.hadoopRDD 方法, 它接受一个任意的 JobConf 和 input format class, key class 和 value class. 通过相同的方法你可以设置你的 input source（输入源）. 你还可以针对 InputFormats 使用基于 “new” MapReduce API (org.apache.hadoop.mapreduce) 的 SparkContext.newAPIHadoopRDD.</p>
+<p>RDD.saveAsObjectFile 和 SparkContext.objectFile 支持使用简单的序列化的 Java objects 来保存 RDD. 虽然这不像 Avro 这种专用的格式一样高效，但其提供了一种更简单的方式来保存任何的 RDD。</p>
+<h3 id="RDD-操作"><a href="#RDD-操作" class="headerlink" title="RDD 操作"></a>RDD 操作</h3><p>RDDs support 两种类型的操作: transformations（转换）, 它会在一个已存在的 dataset 上创建一个新的 dataset, 和 actions（动作）, 将在 dataset 上运行的计算后返回到 driver 程序. 例如, map 是一个通过让每个数据集元素都执行一个函数，并返回的新 RDD 结果的 transformation, reduce reduce 通过执行一些函数，聚合 RDD 中所有元素，并将最终结果给返回驱动程序（虽然也有一个并行 reduceByKey 返回一个分布式数据集）的 action.</p>
+<p>Spark 中所有的 transformations 都是 lazy（懒加载的）, 因此它不会立刻计算出结果. 相反, 他们只记得应用于一些基本数据集的转换 (例如. 文件). 只有当需要返回结果给驱动程序时，transformations 才开始计算. 这种设计使 Spark 的运行更高效. 例如, 我们可以了解到，map 所创建的数据集将被用在 reduce 中，并且只有 reduce 的计算结果返回给驱动程序，而不是映射一个更大的数据集.</p>
+<p>默认情况下，每次你在 RDD 运行一个 action 的时， 每个 transformed RDD 都会被重新计算。但是，您也可用 persist (或 cache) 方法将 RDD persist（持久化）到内存中；在这种情况下，Spark 为了下次查询时可以更快地访问，会把数据保存在集群上。此外，还支持持续持久化 RDDs 到磁盘，或复制到多个结点。</p>
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p>为了说明 RDD 基础，请思考下面这个的简单程序:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val lines = sc.textFile(<span class="string">"data.txt"</span>)</span><br><span class="line">val lineLengths = lines.map(s =&gt; s.length)</span><br><span class="line">val totalLength = lineLengths.reduce((a, b) =&gt; a + b)</span><br></pre></td></tr></table></figure></p>
+<p>第一行从外部文件中定义了一个基本的 RDD，但这个数据集并未加载到内存中或即将被行动: line 仅仅是一个类似指针的东西，指向该文件. 第二行定义了 lineLengths 作为 map transformation 的结果。请注意，由于 laziness（延迟加载）lineLengths 不会被立即计算. 最后，我们运行 reduce，这是一个 action。此时，Spark 分发计算任务到不同的机器上运行，每台机器都运行在 map 的一部分并本地运行 reduce，仅仅返回它聚合后的结果给驱动程序.</p>
+<p>如果我们也希望以后再次使用 lineLengths，我们还可以添加:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lineLengths.persist()</span><br></pre></td></tr></table></figure></p>
+<p>在 reduce 之前，这将导致 lineLengths 在第一次计算之后就被保存在 memory 中。</p>
+<h4 id="传递-Functions（函数）给-Spark"><a href="#传递-Functions（函数）给-Spark" class="headerlink" title="传递 Functions（函数）给 Spark"></a>传递 Functions（函数）给 Spark</h4><p>当 driver 程序在集群上运行时，Spark 的 API 在很大程度上依赖于传递函数。有 2 种推荐的方式来做到这一点:</p>
+<p>Anonymous function syntax（匿名函数语法）, 它可以用于短的代码片断.<br>在全局单例对象中的静态方法. 例如, 您可以定义 object MyFunctions 然后传递 MyFunctions.func1, 如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">object MyFunctions &#123;</span><br><span class="line">  def func1(s: String): String = &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myRdd.map(MyFunctions.func1)</span><br></pre></td></tr></table></figure></p>
+<p>请注意，虽然也有可能传递一个类的实例（与单例对象相反）的方法的引用，这需要发送整个对象，包括类中其它方法。例如，考虑:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class MyClass &#123;</span><br><span class="line">  def func1(s: String): String = &#123; ... &#125;</span><br><span class="line">  def doStuff(rdd: RDD[String]): RDD[String] = &#123; rdd.map(func1) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里，如果我们创建一个 MyClass 的实例，并调用 doStuff，在 map 内有 MyClass 实例的 func1 方法的引用，所以整个对象需要被发送到集群的。它类似于 rdd.map(x =&gt; this.func1(x))</p>
+<p>类似的方式，访问外部对象的字段将引用整个对象:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class MyClass &#123;</span><br><span class="line">  val field = <span class="string">"Hello"</span></span><br><span class="line">  def doStuff(rdd: RDD[String]): RDD[String] = &#123; rdd.map(x =&gt; field + x) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>相当于写 rdd.map(x =&gt; this.field + x), 它引用 this 所有的东西. 为了避免这个问题, 最简单的方式是复制 field 到一个本地变量，而不是外部访问它:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def doStuff(rdd: RDD[String]): RDD[String] = &#123;</span><br><span class="line">  val field_ = this.field</span><br><span class="line">  rdd.map(x =&gt; field_ + x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="理解闭包"><a href="#理解闭包" class="headerlink" title="理解闭包"></a>理解闭包</h4><p>在集群中执行代码时，一个关于 Spark 更难的事情是理解变量和方法的范围和生命周期. 修改其范围之外的变量 RDD 操作可以混淆的常见原因。在下面的例子中，我们将看一下使用的 foreach() 代码递增累加计数器，但类似的问题，也可能会出现其他操作上。</p>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p>考虑一个简单的 RDD 元素求和，以下行为可能不同，具体取决于是否在同一个 JVM 中执行. 一个常见的例子是当 Spark 运行在 local 本地模式（–master = local[n]）时，与部署 Spark 应用到群集（例如，通过 spark-submit 到 YARN）:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var counter = 0</span><br><span class="line">var rdd = sc.parallelize(data)</span><br><span class="line"></span><br><span class="line">// Wrong: Don<span class="string">'t do this!!</span></span><br><span class="line"><span class="string">rdd.foreach(x =&gt; counter += x)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">println("Counter value: " + counter)</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="Local（本地）vs-cluster（集群）模式"><a href="#Local（本地）vs-cluster（集群）模式" class="headerlink" title="Local（本地）vs. cluster（集群）模式"></a>Local（本地）vs. cluster（集群）模式</h5><p>上面的代码行为是不确定的，并且可能无法按预期正常工作。执行作业时，Spark 会分解 RDD 操作到每个 executor 中的 task 里。在执行之前，Spark 计算任务的 closure（闭包）。闭包是指 executor 要在RDD上进行计算时必须对执行节点可见的那些变量和方法（在这里是foreach()）。闭包被序列化并被发送到每个 executor。</p>
+<p>闭包的变量副本发给每个 executor ，当 counter 被 foreach 函数引用的时候，它已经不再是 driver node 的 counter 了。虽然在 driver node 仍然有一个 counter 在内存中，但是对 executors 已经不可见。executor 看到的只是序列化的闭包一个副本。所以 counter 最终的值还是 0，因为对 counter 所有的操作均引用序列化的 closure 内的值。</p>
+<p>在 local 本地模式，在某些情况下的 foreach 功能实际上是同一 JVM 上的驱动程序中执行，并会引用同一个原始的 counter 计数器，实际上可能更新.</p>
+<p>为了确保这些类型的场景明确的行为应该使用的 Accumulator 累加器。当一个执行的任务分配到集群中的各个 worker 结点时，Spark 的累加器是专门提供安全更新变量的机制。本指南的累加器的部分会更详细地讨论这些。</p>
+<p>在一般情况下，closures - constructs 像循环或本地定义的方法，不应该被用于改动一些全局状态。Spark 没有规定或保证突变的行为，以从封闭件的外侧引用的对象。一些代码，这可能以本地模式运行，但是这只是偶然和这样的代码如预期在分布式模式下不会表现。如果需要一些全局的聚合功能，应使用 Accumulator（累加器）。</p>
+<h5 id="打印-RDD-的-elements"><a href="#打印-RDD-的-elements" class="headerlink" title="打印 RDD 的 elements"></a>打印 RDD 的 elements</h5><p>另一种常见的语法用于打印 RDD 的所有元素使用 rdd.foreach(println) 或 rdd.map(println)。在一台机器上，这将产生预期的输出和打印 RDD 的所有元素。然而，在集群 cluster 模式下，stdout 输出正在被执行写操作 executors 的 stdout 代替，而不是在一个驱动程序上，因此 stdout 的 driver 程序不会显示这些！要打印 driver 程序的所有元素，可以使用的 collect() 方法首先把 RDD 放到 driver 程序节点上: rdd.collect().foreach(println)。这可能会导致 driver 程序耗尽内存，虽说，因为 collect() 获取整个 RDD 到一台机器; 如果你只需要打印 RDD 的几个元素，一个更安全的方法是使用 take(): rdd.take(100).foreach(println)。</p>
+<h4 id="与-Key-Value-Pairs-一起使用"><a href="#与-Key-Value-Pairs-一起使用" class="headerlink" title="与 Key-Value Pairs 一起使用"></a>与 Key-Value Pairs 一起使用</h4><p>虽然大多数 Spark 操作工作在包含任何类型对象的 RDDs 上，只有少数特殊的操作可用于 Key-Value 对的 RDDs. 最常见的是分布式 “shuffle” 操作，如通过元素的 key 来进行 grouping 或 aggregating 操作.</p>
+<p>在 Scala 中，这些操作在 RDD 上是自动可用，它包含了 Tuple2 objects (the built-in tuples in the language, created by simply writing (a, b)). 在 PairRDDFunctions class 中该 key-value pair 操作是可用的, 其中围绕 tuple 的 RDD 进行自动封装.</p>
+<p>例如，下面的代码使用的 Key-Value 对的 reduceByKey 操作统计文本文件中每一行出现了多少次:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val lines = sc.textFile(<span class="string">"data.txt"</span>)</span><br><span class="line">val pairs = lines.map(s =&gt; (s, 1))</span><br><span class="line">val counts = pairs.reduceByKey((a, b) =&gt; a + b)</span><br></pre></td></tr></table></figure></p>
+<p>我们也可以使用 counts.sortByKey() ，例如，在对按字母顺序排序，最后 counts.collect() 把他们作为一个数据对象返回给 driver 程序。</p>
+<p>Note（注意）: 当在 key-value pair 操作中使用自定义的 objects 作为 key 时, 您必须确保有一个自定义的 equals() 方法有一个 hashCode() 方法相匹配. 有关详情, 请参阅 Object.hashCode() documentation 中列出的约定.</p>
+<h4 id="Transformations（转换）"><a href="#Transformations（转换）" class="headerlink" title="Transformations（转换）"></a>Transformations（转换）</h4><p>下表列出了一些 Spark 常用的 transformations（转换）. 详情请参考 RDD API 文档 (Scala, Java, Python, R) 和 pair RDD 函数文档 (Scala, Java).</p>
+<table>
+<thead>
+<tr>
+<th>Transformation（转换）</th>
+<th style="text-align:left">Meaning（含义）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>map(func)</td>
+<td style="text-align:left">返回一个新的 distributed dataset（分布式数据集），它由每个 source（数据源）中的元素应用一个函数 func 来生成.</td>
+</tr>
+<tr>
+<td>filter(func)</td>
+<td style="text-align:left">返回一个新的 distributed dataset（分布式数据集），它由每个 source（数据源）中应用一个函数 func 且返回值为 true 的元素来生成.</td>
+</tr>
+<tr>
+<td>flatMap(func)</td>
+<td style="text-align:left">与 map 类似，但是每一个输入的 item 可以被映射成 0 个或多个输出的 items（所以 func 应该返回一个 Seq 而不是一个单独的 item）.</td>
+</tr>
+<tr>
+<td>mapPartitions(func)</td>
+<td style="text-align:left">与 map 类似，但是单独的运行在在每个 RDD 的 partition（分区，block）上，所以在一个类型为 T 的 RDD 上运行时 func 必须是 Iterator<t> =&gt; Iterator<u> 类型.</u></t></td>
+</tr>
+<tr>
+<td>mapPartitionsWithIndex(func)</td>
+<td style="text-align:left">与 mapPartitions 类似，但是也需要提供一个代表 partition 的 index（索引）的 interger value（整型值）作为参数的 func，所以在一个类型为 T 的 RDD 上运行时 func 必须是 (Int, Iterator<t>) =&gt; Iterator<u> 类型.</u></t></td>
+</tr>
+<tr>
+<td>sample(withReplacement, fraction, seed)</td>
+<td style="text-align:left">样本数据，设置是否放回（withReplacement）, 采样的百分比（fraction）、使用指定的随机数生成器的种子（seed）.</td>
+</tr>
+<tr>
+<td>union(otherDataset)</td>
+<td style="text-align:left">反回一个新的 dataset，它包含了 source dataset（源数据集）和 otherDataset（其它数据集）的并集.</td>
+</tr>
+<tr>
+<td>intersection(otherDataset)</td>
+<td style="text-align:left">返回一个新的 RDD，它包含了 source dataset（源数据集）和 otherDataset（其它数据集）的交集.</td>
+</tr>
+<tr>
+<td>distinct([numTasks]))</td>
+<td style="text-align:left">返回一个新的 dataset，它包含了 source dataset（源数据集）中去重的元素.</td>
+</tr>
+<tr>
+<td>groupByKey([numTasks])</td>
+<td style="text-align:left">在一个 (K, V) pair 的 dataset 上调用时，返回一个 (K, Iterable<v>) .  Note: 如果分组是为了在每一个 key 上执行聚合操作（例如，sum 或 average)，此时使用 reduceByKey 或 aggregateByKey 来计算性能会更好.  Note: 默认情况下，并行度取决于父 RDD 的分区数。可以传递一个可选的 numTasks 参数来设置不同的任务数.</v></td>
+</tr>
+<tr>
+<td>reduceByKey(func, [numTasks])</td>
+<td style="text-align:left">在 (K, V) pairs 的 dataset 上调用时, 返回 dataset of (K, V) pairs 的 dataset, 其中的 values 是针对每个 key 使用给定的函数 func 来进行聚合的, 它必须是 type (V,V) =&gt; V 的类型. 像 groupByKey 一样, reduce tasks 的数量是可以通过第二个可选的参数来配置的.</td>
+</tr>
+<tr>
+<td>aggregateByKey(zeroValue)(seqOp, combOp, [numTasks])</td>
+<td style="text-align:left">在 (K, V) pairs 的 dataset 上调用时, 返回 (K, U) pairs 的 dataset，其中的 values 是针对每个 key 使用给定的 combine 函数以及一个 neutral “0” 值来进行聚合的. 允许聚合值的类型与输入值的类型不一样, 同时避免不必要的配置. 像 groupByKey 一样, reduce tasks 的数量是可以通过第二个可选的参数来配置的.</td>
+</tr>
+<tr>
+<td>sortByKey([ascending], [numTasks])</td>
+<td style="text-align:left">在一个 (K, V) pair 的 dataset 上调用时，其中的 K 实现了 Ordered，返回一个按 keys 升序或降序的 (K, V) pairs 的 dataset, 由 boolean 类型的 ascending 参数来指定.</td>
+</tr>
+<tr>
+<td>join(otherDataset, [numTasks])</td>
+<td style="text-align:left">在一个 (K, V) 和 (K, W) 类型的 dataset 上调用时，返回一个 (K, (V, W)) pairs 的 dataset，它拥有每个 key 中所有的元素对。Outer joins 可以通过 leftOuterJoin, rightOuterJoin 和 fullOuterJoin 来实现.</td>
+</tr>
+<tr>
+<td>cogroup(otherDataset, [numTasks])</td>
+<td style="text-align:left">在一个 (K, V) 和的 dataset 上调用时，返回一个 (K, (Iterable<v>, Iterable<w>)) tuples 的 dataset. 这个操作也调用了 groupWith.</w></v></td>
+</tr>
+<tr>
+<td>cartesian(otherDataset)</td>
+<td style="text-align:left">在一个 T 和 U 类型的 dataset 上调用时，返回一个 (T, U) pairs 类型的 dataset（所有元素的 pairs，即笛卡尔积）.</td>
+</tr>
+<tr>
+<td>pipe(command, [envVars])</td>
+<td style="text-align:left">通过使用 shell 命令来将每个 RDD 的分区给 Pipe。例如，一个 Perl 或 bash 脚本。RDD 的元素会被写入进程的标准输入（stdin），并且 lines（行）输出到它的标准输出（stdout）被作为一个字符串型 RDD 的 string 返回.</td>
+</tr>
+<tr>
+<td>coalesce(numPartitions)</td>
+<td style="text-align:left">Decrease（降低）RDD 中 partitions（分区）的数量为 numPartitions。对于执行过滤后一个大的 dataset 操作是更有效的.</td>
+</tr>
+<tr>
+<td>repartition(numPartitions)</td>
+<td style="text-align:left">Reshuffle（重新洗牌）RDD 中的数据以创建或者更多的 partitions（分区）并将每个分区中的数据尽量保持均匀. 该操作总是通过网络来 shuffles 所有的数据.</td>
+</tr>
+<tr>
+<td>repartitionAndSortWithinPartitions(partitioner)</td>
+<td style="text-align:left">根据给定的 partitioner（分区器）对 RDD 进行重新分区，并在每个结果分区中，按照 key 值对记录排序。这比每一个分区中先调用 repartition 然后再 sorting（排序）效率更高，因为它可以将排序过程推送到 shuffle 操作的机器上进行.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Actions（动作）"><a href="#Actions（动作）" class="headerlink" title="Actions（动作）"></a>Actions（动作）</h4><p>下表列出了一些 Spark 常用的 actions 操作。详细请参考 RDD API 文档 (Scala, Java, Python, R)</p>
+<p>和 pair RDD 函数文档 (Scala, Java).</p>
+<table>
+<thead>
+<tr>
+<th>Action（动作）</th>
+<th style="text-align:left">Meaning（含义）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reduce(func)</td>
+<td style="text-align:left">使用函数 func 聚合 dataset 中的元素，这个函数 func 输入为两个元素，返回为一个元素。这个函数应该是可交换（commutative ）和关联（associative）的，这样才能保证它可以被并行地正确计算.</td>
+</tr>
+<tr>
+<td>collect()</td>
+<td style="text-align:left">在 driver 程序中，以一个 array 数组的形式返回 dataset 的所有元素。这在过滤器（filter）或其他操作（other operation）之后返回足够小（sufficiently small）的数据子集通常是有用的.</td>
+</tr>
+<tr>
+<td>count()</td>
+<td style="text-align:left">返回 dataset 中元素的个数.</td>
+</tr>
+<tr>
+<td>first()</td>
+<td style="text-align:left">返回 dataset 中的第一个元素（类似于 take(1).</td>
+</tr>
+<tr>
+<td>take(n)</td>
+<td style="text-align:left">将数据集中的前 n 个元素作为一个 array 数组返回.</td>
+</tr>
+<tr>
+<td>takeSample(withReplacement, num, [seed])</td>
+<td style="text-align:left">对一个 dataset 进行随机抽样，返回一个包含 num 个随机抽样（random sample）元素的数组，参数 withReplacement 指定是否有放回抽样，参数 seed 指定生成随机数的种子.</td>
+</tr>
+<tr>
+<td>takeOrdered(n, [ordering])</td>
+<td style="text-align:left">返回 RDD 按自然顺序（natural order）或自定义比较器（custom comparator）排序后的前 n 个元素.</td>
+</tr>
+<tr>
+<td>saveAsTextFile(path)</td>
+<td style="text-align:left">将 dataset 中的元素以文本文件（或文本文件集合）的形式写入本地文件系统、HDFS 或其它 Hadoop 支持的文件系统中的给定目录中。Spark 将对每个元素调用 toString 方法，将数据元素转换为文本文件中的一行记录.</td>
+</tr>
+<tr>
+<td>saveAsSequenceFile(path)(Java and Scala)</td>
+<td style="text-align:left">将 dataset 中的元素以 Hadoop SequenceFile 的形式写入到本地文件系统、HDFS 或其它 Hadoop 支持的文件系统指定的路径中。该操作可以在实现了 Hadoop 的 Writable 接口的键值对（key-value pairs）的 RDD 上使用。在 Scala 中，它还可以隐式转换为 Writable 的类型（Spark 包括了基本类型的转换，例如 Int, Double, String 等等).</td>
+</tr>
+<tr>
+<td>saveAsObjectFile(path)(Java and Scala)</td>
+<td style="text-align:left">使用 Java 序列化（serialization）以简单的格式（simple format）编写数据集的元素，然后使用 SparkContext.objectFile() 进行加载.</td>
+</tr>
+<tr>
+<td>countByKey()</td>
+<td style="text-align:left">仅适用于（K,V）类型的 RDD 。返回具有每个 key 的计数的 （K , Int）pairs 的 hashmap.</td>
+</tr>
+<tr>
+<td>foreach(func)</td>
+<td style="text-align:left">对 dataset 中每个元素运行函数 func 。这通常用于副作用（side effects），例如更新一个 Accumulator（累加器）或与外部存储系统（external storage systems）进行交互。Note：修改除 foreach()之外的累加器以外的变量（variables）可能会导致未定义的行为（undefined behavior）。详细介绍请阅读 Understanding closures（理解闭包） 部分.</td>
+</tr>
+</tbody>
+</table>
+<p>该 Spark RDD API 还暴露了一些 actions（操作）的异步版本，例如针对 foreach 的 foreachAsync，它们会立即返回一个FutureAction 到调用者，而不是在完成 action 时阻塞。 这可以用于管理或等待 action 的异步执行。</p>
+<h4 id="Shuffle-操作"><a href="#Shuffle-操作" class="headerlink" title="Shuffle 操作"></a>Shuffle 操作</h4><p>Spark 里的某些操作会触发 shuffle。shuffle 是spark 重新分配数据的一种机制，使得这些数据可以跨不同的区域进行分组。这通常涉及在 executors 和 机器之间拷贝数据，这使得 shuffle 成为一个复杂的、代价高的操作。</p>
+<h5 id="Background（幕后）"><a href="#Background（幕后）" class="headerlink" title="Background（幕后）"></a>Background（幕后）</h5><p>为了明白 reduceByKey 操作的过程，我们以 reduceByKey 为例。reduceBykey 操作产生一个新的 RDD，其中 key 所有相同的的值组合成为一个 tuple - key 以及与 key 相关联的所有值在 reduce 函数上的执行结果。面临的挑战是，一个 key 的所有值不一定都在一个同一个 paritition 分区里，甚至是不一定在同一台机器里，但是它们必须共同被计算。</p>
+<p>在 spark 里，特定的操作需要数据不跨分区分布。在计算期间，一个任务在一个分区上执行，为了所有数据都在单个 reduceByKey 的 reduce 任务上运行，我们需要执行一个 all-to-all 操作。它必须从所有分区读取所有的 key 和 key对应的所有的值，并且跨分区聚集去计算每个 key 的结果 - 这个过程就叫做 shuffle.。</p>
+<p>尽管每个分区新 shuffle 的数据集将是确定的，分区本身的顺序也是这样，但是这些数据的顺序是不确定的。如果希望 shuffle 后的数据是有序的，可以使用:</p>
+<p>mapPartitions 对每个 partition 分区进行排序，例如, .sorted<br>repartitionAndSortWithinPartitions 在分区的同时对分区进行高效的排序.<br>sortBy 对 RDD 进行全局的排序<br>触发的 shuffle 操作包括 repartition 操作，如 repartition 和 coalesce, ‘ByKey 操作 (除了 counting 之外) 像 groupByKey 和 reduceByKey, 和 join 操作, 像 cogroup 和 join.</p>
+<h5 id="性能影响"><a href="#性能影响" class="headerlink" title="性能影响"></a>性能影响</h5><p>该 Shuffle 是一个代价比较高的操作，它涉及磁盘 I/O、数据序列化、网络 I/O。为了准备 shuffle 操作的数据，Spark 启动了一系列的任务，map 任务组织数据，reduce 完成数据的聚合。这些术语来自 MapReduce，跟 Spark 的 map 操作和 reduce 操作没有关系。</p>
+<p>在内部，一个 map 任务的所有结果数据会保存在内存，直到内存不能全部存储为止。然后，这些数据将基于目标分区进行排序并写入一个单独的文件中。在 reduce 时，任务将读取相关的已排序的数据块。</p>
+<p>某些 shuffle 操作会大量消耗堆内存空间，因为 shuffle 操作在数据转换前后，需要在使用内存中的数据结构对数据进行组织。需要特别说明的是，reduceByKey 和 aggregateByKey 在 map 时会创建这些数据结构，’ByKey 操作在 reduce 时创建这些数据结构。当内存满的时候，Spark 会把溢出的数据存到磁盘上，这将导致额外的磁盘 I/O 开销和垃圾回收开销的增加。</p>
+<p>shuffle 操作还会在磁盘上生成大量的中间文件。在 Spark 1.3 中，这些文件将会保留至对应的 RDD 不在使用并被垃圾回收为止。这么做的好处是，如果在 Spark 重新计算 RDD 的血统关系（lineage）时，shuffle 操作产生的这些中间文件不需要重新创建。如果 Spark 应用长期保持对 RDD 的引用，或者垃圾回收不频繁，这将导致垃圾回收的周期比较长。这意味着，长期运行 Spark 任务可能会消耗大量的磁盘空间。临时数据存储路径可以通过 SparkContext 中设置参数 spark.local.dir 进行配置。</p>
+<p>shuffle 操作的行为可以通过调节多个参数进行设置。详细的说明请看 Spark 配置指南 中的 “Shuffle 行为” 部分。</p>
+<h3 id="RDD-Persistence（持久化）"><a href="#RDD-Persistence（持久化）" class="headerlink" title="RDD Persistence（持久化）"></a>RDD Persistence（持久化）</h3><p>Spark 中一个很重要的能力是将数据 persisting 持久化（或称为 caching 缓存），在多个操作间都可以访问这些持久化的数据。当持久化一个 RDD 时，每个节点的其它分区都可以使用 RDD 在内存中进行计算，在该数据上的其他 action 操作将直接使用内存中的数据。这样会让以后的 action 操作计算速度加快（通常运行速度会加速 10 倍）。缓存是迭代算法和快速的交互式使用的重要工具。</p>
+<p>RDD 可以使用 persist() 方法或 cache() 方法进行持久化。数据将会在第一次 action 操作时进行计算，并缓存在节点的内存中。Spark 的缓存具有容错机制，如果一个缓存的 RDD 的某个分区丢失了，Spark 将按照原来的计算过程，自动重新计算并进行缓存。</p>
+<p>另外，每个持久化的 RDD 可以使用不同的 storage level 存储级别进行缓存，例如，持久化到磁盘、已序列化的 Java 对象形式持久化到内存（可以节省空间）、跨节点间复制、以 off-heap 的方式存储在 Tachyon。这些存储级别通过传递一个 StorageLevel 对象 (Scala, Java, Python) 给 persist() 方法进行设置。cache() 方法是使用默认存储级别的快捷设置方法，默认的存储级别是 StorageLevel.MEMORY_ONLY（将反序列化的对象存储到内存中）。详细的存储级别介绍如下:</p>
+<table>
+<thead>
+<tr>
+<th>Storage Level（存储级别）</th>
+<th style="text-align:left">Meaning（含义）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MEMORY_ONLY</td>
+<td style="text-align:left">将 RDD 以反序列化的 Java 对象的形式存储在 JVM 中. 如果内存空间不够，部分数据分区将不再缓存，在每次需要用到这些数据时重新进行计算. 这是默认的级别.</td>
+</tr>
+<tr>
+<td>MEMORY_AND_DISK</td>
+<td style="text-align:left">将 RDD 以反序列化的 Java 对象的形式存储在 JVM 中。如果内存空间不够，将未缓存的数据分区存储到磁盘，在需要使用这些分区时从磁盘读取.</td>
+</tr>
+<tr>
+<td>MEMORY_ONLY_SER(Java and Scala)</td>
+<td style="text-align:left">将 RDD 以序列化的 Java 对象的形式进行存储（每个分区为一个 byte 数组）。这种方式会比反序列化对象的方式节省很多空间，尤其是在使用 fast serializer 时会节省更多的空间，但是在读取时会增加 CPU 的计算负担.</td>
+</tr>
+<tr>
+<td>MEMORY_AND_DISK_SER(Java and Scala)</td>
+<td style="text-align:left">类似于 MEMORY_ONLY_SER ，但是溢出的分区会存储到磁盘，而不是在用到它们时重新计算.</td>
+</tr>
+<tr>
+<td>DISK_ONLY</td>
+<td style="text-align:left">只在磁盘上缓存 RDD.</td>
+</tr>
+<tr>
+<td>MEMORY_ONLY_2, MEMORY_AND_DISK_2, etc.</td>
+<td style="text-align:left">与上面的级别功能相同，只不过每个分区在集群中两个节点上建立副本.</td>
+</tr>
+<tr>
+<td>OFF_HEAP</td>
+<td style="text-align:left">(experimental 实验性)    类似于 MEMORY_ONLY_SER, 但是将数据存储在 off-heap memory 中. 这需要启用 off-heap 内存.</td>
+</tr>
+</tbody>
+</table>
+<p>Note: 在 Python 中, stored objects will 总是使用 Pickle library 来序列化对象, 所以无论你选择序列化级别都没关系. 在 Python 中可用的存储级别有 MEMORY_ONLY, MEMORY_ONLY_2, MEMORY_AND_DISK, MEMORY_AND_DISK_2, DISK_ONLY, 和 DISK_ONLY_2.</p>
+<p>在 shuffle 操作中（例如 reduceByKey），即便是用户没有调用 persist 方法，Spark 也会自动缓存部分中间数据.这么做的目的是，在 shuffle 的过程中某个节点运行失败时，不需要重新计算所有的输入数据。如果用户想多次使用某个 RDD，强烈推荐在该 RDD 上调用 persist 方法.</p>
+<h4 id="如何选择存储级别"><a href="#如何选择存储级别" class="headerlink" title="如何选择存储级别 ?"></a>如何选择存储级别 ?</h4><p>Spark 的存储级别的选择，核心问题是在 memory 内存使用率和 CPU 效率之间进行权衡。建议按下面的过程进行存储级别的选择:</p>
+<p>如果您的 RDD 适合于默认存储级别 (MEMORY_ONLY), leave them that way. 这是CPU效率最高的选项，允许RDD上的操作尽可能快地运行.</p>
+<p>如果不是, 试着使用 MEMORY_ONLY_SER 和 selecting a fast serialization library 以使对象更加节省空间，但仍然能够快速访问。 (Java和Scala)</p>
+<p>不要溢出到磁盘，除非计算您的数据集的函数是昂贵的, 或者它们过滤大量的数据. 否则, 重新计算分区可能与从磁盘读取分区一样快.</p>
+<p>如果需要快速故障恢复，请使用复制的存储级别 (e.g. 如果使用Spark来服务 来自网络应用程序的请求). All 存储级别通过重新计算丢失的数据来提供完整的容错能力，但复制的数据可让您继续在 RDD 上运行任务，而无需等待重新计算一个丢失的分区.</p>
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><p>Spark 会自动监视每个节点上的缓存使用情况，并使用 least-recently-used（LRU）的方式来丢弃旧数据分区。 如果您想手动删除 RDD 而不是等待它掉出缓存，使用 RDD.unpersist() 方法。</p>
+<h2 id="共享变量"><a href="#共享变量" class="headerlink" title="共享变量"></a>共享变量</h2><p>通常情况下，一个传递给 Spark 操作（例如 map 或 reduce）的函数 func 是在远程的集群节点上执行的。该函数 func 在多个节点执行过程中使用的变量，是同一个变量的多个副本。这些变量的以副本的方式拷贝到每个机器上，并且各个远程机器上变量的更新并不会传播回 driver program（驱动程序）。通用且支持 read-write（读-写） 的共享变量在任务间是不能胜任的。所以，Spark 提供了两种特定类型的共享变量 : broadcast variables（广播变量）和 accumulators（累加器）。</p>
+<h3 id="广播变量"><a href="#广播变量" class="headerlink" title="广播变量"></a>广播变量</h3><p>Broadcast variables（广播变量）允许程序员将一个 read-only（只读的）变量缓存到每台机器上，而不是给任务传递一个副本。它们是如何来使用呢，例如，广播变量可以用一种高效的方式给每个节点传递一份比较大的 input dataset（输入数据集）副本。在使用广播变量时，Spark 也尝试使用高效广播算法分发 broadcast variables（广播变量）以降低通信成本。</p>
+<p>Spark 的 action（动作）操作是通过一系列的 stage（阶段）进行执行的，这些 stage（阶段）是通过分布式的 “shuffle” 操作进行拆分的。Spark 会自动广播出每个 stage（阶段）内任务所需要的公共数据。这种情况下广播的数据使用序列化的形式进行缓存，并在每个任务运行前进行反序列化。这也就意味着，只有在跨越多个 stage（阶段）的多个任务会使用相同的数据，或者在使用反序列化形式的数据特别重要的情况下，使用广播变量会有比较好的效果。</p>
+<p>广播变量通过在一个变量 v 上调用 SparkContext.broadcast(v) 方法来进行创建。广播变量是 v 的一个 wrapper（包装器），可以通过调用 value 方法来访问它的值。代码示例如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; val broadcastVar = sc.broadcast(Array(1, 2, 3))</span><br><span class="line">broadcastVar: org.apache.spark.broadcast.Broadcast[Array[Int]] = Broadcast(0)</span><br><span class="line"></span><br><span class="line">scala&gt; broadcastVar.value</span><br><span class="line">res0: Array[Int] = Array(1, 2, 3)</span><br></pre></td></tr></table></figure></p>
+<p>在创建广播变量之后，在集群上执行的所有的函数中，应该使用该广播变量代替原来的 v 值，所以节点上的 v 最多分发一次。另外，对象 v 在广播后不应该再被修改，以保证分发到所有的节点上的广播变量具有同样的值（例如，如果以后该变量会被运到一个新的节点）。</p>
+<h3 id="Accumulators（累加器）"><a href="#Accumulators（累加器）" class="headerlink" title="Accumulators（累加器）"></a>Accumulators（累加器）</h3><p>Accumulators（累加器）是一个仅可以执行 “added”（添加）的变量来通过一个关联和交换操作，因此可以高效地执行支持并行。累加器可以用于实现 counter（ 计数，类似在 MapReduce 中那样）或者 sums（求和）。原生 Spark 支持数值型的累加器，并且程序员可以添加新的支持类型。</p>
+<p>作为一个用户，您可以创建 accumulators（累加器）并且重命名. 如下图所示, 一个命名的 accumulator 累加器（在这个例子中是 counter）将显示在 web UI 中，用于修改该累加器的阶段。 Spark 在 “Tasks” 任务表中显示由任务修改的每个累加器的值.</p>
+<p>在 UI 中跟踪累加器可以有助于了解运行阶段的进度（注: 这在 Python 中尚不支持）.</p>
+<p>可以通过调用 SparkContext.longAccumulator() 或 SparkContext.doubleAccumulator() 方法创建数值类型的 accumulator（累加器）以分别累加 Long 或 Double 类型的值。集群上正在运行的任务就可以使用 add 方法来累计数值。然而，它们不能够读取它的值。只有 driver program（驱动程序）才可以使用 value 方法读取累加器的值。</p>
+<p>下面的代码展示了一个 accumulator（累加器）被用于对一个数组中的元素求和:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; val accum = sc.longAccumulator(<span class="string">"My Accumulator"</span>)</span><br><span class="line">accum: org.apache.spark.util.LongAccumulator = LongAccumulator(id: 0, name: Some(My Accumulator), value: 0)</span><br><span class="line"></span><br><span class="line">scala&gt; sc.parallelize(Array(1, 2, 3, 4)).foreach(x =&gt; accum.add(x))</span><br><span class="line">...</span><br><span class="line">10/09/29 18:41:08 INFO SparkContext: Tasks finished <span class="keyword">in</span> 0.317106 s</span><br><span class="line"></span><br><span class="line">scala&gt; accum.value</span><br><span class="line">res2: Long = 10</span><br></pre></td></tr></table></figure></p>
+<p>虽然此代码使用 Long 类型的累加器的内置支持, 但是开发者通过 AccumulatorV2 它的子类来创建自己的类型. AccumulatorV2 抽象类有几个需要 override（重写）的方法: reset 方法可将累加器重置为 0, add 方法可将其它值添加到累加器中, merge 方法可将其他同样类型的累加器合并为一个. 其他需要重写的方法可参考 API documentation. 例如, 假设我们有一个表示数学上 vectors（向量）的 MyVector 类，我们可以写成:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class VectorAccumulatorV2 extends AccumulatorV2[MyVector, MyVector] &#123;</span><br><span class="line"></span><br><span class="line">  private val myVector: MyVector = MyVector.createZeroVector</span><br><span class="line"></span><br><span class="line">  def reset(): Unit = &#123;</span><br><span class="line">    myVector.reset()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  def add(v: MyVector): Unit = &#123;</span><br><span class="line">    myVector.add(v)</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Then, create an Accumulator of this <span class="built_in">type</span>:</span><br><span class="line">val myVectorAcc = new VectorAccumulatorV2</span><br><span class="line">// Then, register it into spark context:</span><br><span class="line">sc.register(myVectorAcc, <span class="string">"MyVectorAcc1"</span>)</span><br></pre></td></tr></table></figure>
+<p>注意，在开发者定义自己的 AccumulatorV2 类型时， resulting type（返回值类型）可能与添加的元素的类型不一致。</p>
+<p>累加器的更新只发生在 action 操作中，Spark 保证每个任务只更新累加器一次，例如，重启任务不会更新值。在 transformations（转换）中， 用户需要注意的是，如果 task（任务）或 job stages（阶段）重新执行，每个任务的更新操作可能会执行多次。</p>
+<p>累加器不会改变 Spark lazy evaluation（懒加载）的模式。如果累加器在 RDD 中的一个操作中进行更新，它们的值仅被更新一次，RDD 被作为 action 的一部分来计算。因此，在一个像 map() 这样的 transformation（转换）时，累加器的更新并没有执行。下面的代码片段证明了这个特性:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val accum = sc.longAccumulator</span><br><span class="line">data.map &#123; x =&gt; accum.add(x); x &#125;</span><br><span class="line">// Here, accum is still 0 because no actions have caused the map operation to be computed.</span><br></pre></td></tr></table></figure></p>
+<h2 id="部署应用到集群中"><a href="#部署应用到集群中" class="headerlink" title="部署应用到集群中"></a>部署应用到集群中</h2><p>该 应用提交指南 描述了如何将应用提交到集群中. 简单的说, 在您将应用打包成一个JAR(针对 Java/Scala) 或者一组 .py 或 .zip 文件 (针对Python), 该 bin/spark-submit 脚本可以让你提交它到任何所支持的 cluster manager 上去.</p>
+<h2 id="从-Java-Scala-启动-Spark-jobs"><a href="#从-Java-Scala-启动-Spark-jobs" class="headerlink" title="从 Java / Scala 启动 Spark jobs"></a>从 Java / Scala 启动 Spark jobs</h2><p>该 org.apache.spark.launcher package 提供了 classes 用于使用简单的 Java API 来作为一个子进程启动 Spark jobs.</p>
+<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>Spark 可以友好的使用流行的单元测试框架进行单元测试。在将 master URL 设置为 local 来测试时会简单的创建一个 SparkContext，运行您的操作，然后调用 SparkContext.stop() 将该作业停止。因为 Spark 不支持在同一个程序中并行的运行两个 contexts，所以需要确保使用 finally 块或者测试框架的 tearDown 方法将 context 停止。</p>
+<h2 id="快速链接"><a href="#快速链接" class="headerlink" title="快速链接"></a>快速链接</h2><p>您可以在 Spark 网站上看一下 Spark 程序示例. 此外, Spark 在 examples 目录中包含了许多示例 (Scala, Java, Python, R). 您可以通过传递 class name 到 Spark 的 bin/run-example 脚本以运行 Java 和 Scala 示例; 例如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/run-example SparkPi</span><br></pre></td></tr></table></figure></p>
+<p>针对应用程序的优化, 该 配置 和 优化 指南一些最佳实践的信息. 这些优化建议在确保你的数据以高效的格式存储在内存中尤其重要. 针对部署参考, 该 集群模式概述 描述了分布式操作和支持的 cluster managers 集群管理器的组件.</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/03/12/scala-01/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/09/hbase-meta-fix/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Canon Leo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        flying_melody@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: flying_melody@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Canon's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?9ERYFTgSBG66B3/PDnLQxg==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
